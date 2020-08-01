@@ -1,0 +1,77 @@
+<!-- <div class="header">
+    <h2 class="logo-heading">RENTAL MANAGEMENT SYSTEM</h2>
+    <div class="location">
+        <div class="header-right">
+            <h2>Select Location</h2>
+        </div>
+        <ul class="location-list">
+            <li *ngFor="let location of locationList">
+                {{location.name}}
+                <ul class="branch-list" >
+                    <li *ngFor="let branch of location.branches">
+                        {{branch.name}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div> -->
+
+<!-- <div class="navbar"> -->
+    <!-- <a href="#home"><h2>RENTAL MANAGEMENT SYSTEM</h2></a>
+    <div class="dropdown">
+        <h2 class="dropbtn">RENTAL MANAGEMENT SYSTEM</h2>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>  -->
+  
+  <!-- </div> -->
+  <!-- <div class="header"></div> -->
+    <!-- <nav>
+        <ul class="nav">
+          <li><a href="#">Location</a>
+            <ul>
+              <li *ngFor="let location of catalogService.getCatalogList()"><a >{{location.name}}</a>
+                <ul>
+                    <li *ngFor="let branch of location.branches">
+                      <a [routerLink]="['equipment-catalog/' + location.dealers_id + '/' + branch.branch_id]">
+                        {{branch.name}}
+                      </a>
+                    </li>                    
+                </ul>
+            </li>
+            </ul>
+          </li>
+        </ul>
+      </nav> -->
+      <div class="header">
+        <div>
+          <a> <h2>RENTAL MANAGEMENT SYSTEM</h2></a>
+        </div>
+        <div class="menu-list">
+        <ul id="menu">
+          <li class="parent"><h2>LOCATION</h2>
+          <ul class="child">
+            <li class="parent" *ngFor="let location of catalogService.getCatalogList()"> <a >{{location.name}} <span class="expand">»</span></a>
+              <ul class="child">
+                <li *ngFor="let branch of location.branches">
+                  <a [routerLink]="['equipment-catalog/' + location.dealers_id + '/' + branch.branch_id]">
+                    {{branch.name}}
+                  </a>
+                </li>  
+              </ul>
+            
+            </li>
+          </ul>
+          </li>
+        </ul>
+      </div>
+      </div>
+      
+    
+
+
+      

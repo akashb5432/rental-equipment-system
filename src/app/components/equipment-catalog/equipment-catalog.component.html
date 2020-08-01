@@ -1,0 +1,27 @@
+<div class="main-container">
+    <ul class="breadcrumb">
+        <li><a [routerLink]="['/']">Equipment Catalog</a></li>
+        <li *ngIf="catalogService.category"><a [routerLink]="['/equipment-catalog/' + catalogService.locationId  + '/' + catalogService.branchId]">{{catalogService.category}}</a></li>
+    </ul>
+    <div class="container"> 
+        <div *ngFor="let equipment of equipmentList"> 
+            <div class="img-container">
+                <img [src]="'assets/category/'+equipment.image" > 
+            </div>
+            <div class="btn" >
+                <button [routerLink]="['/equipment-catalog/' + catalogService.locationId  + '/' + catalogService.branchId + '/' + catalogService.addRemoveSpace(equipment.name, true)]" id="equ-btn" *ngIf="!catalogService.category; else category">
+                    {{equipment.name}} <span class="expand">»</span>
+                </button>
+                <ng-template #category>
+                    <button id="equ-btn" >
+                        {{equipment.name}}
+                    </button>
+                </ng-template>
+            </div>
+        </div>
+        <div *ngIf="equipmentList.length === 0">
+            No record found
+        </div>
+   </div>
+    
+</div>
